@@ -1,0 +1,127 @@
+@use "../abstracts" as *;
+
+// Mixins برای کاهش تکرار کد
+@mixin section-title($color, $font-size: 2rem, $margin-bottom: 1rem) {
+  font-size: $font-size;
+  color: $color;
+  margin-bottom: $margin-bottom;
+}
+
+@mixin section-subtitle($color, $font-size: 1.2rem, $margin-bottom: 1.5rem) {
+  font-size: $font-size;
+  color: $color;
+  margin-bottom: $margin-bottom;
+}
+
+@mixin feature-item($color, $hover-color) {
+  display: block;
+  color: $color;
+  text-decoration: none;
+  margin: 0.5rem 0;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+@mixin cta-btn($bg-color, $text-color, $hover-bg-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $hover-bg-color;
+  }
+}
+
+// 🔥 DARK THEME
+.dark-theme {
+  .section-tow {
+    padding: 2rem;
+    border-radius: 8px;
+
+    .section-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+
+      .section-title {
+        @include section-title(map-get($dark-theme, text-color-primary));
+      }
+
+      .section-subtitle {
+        @include section-subtitle(map-get($dark-theme, text-color-secondary));
+      }
+
+      .features-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .feature-item {
+          @include feature-item(
+            map-get($dark-theme, a-text-color),
+            map-get($dark-theme, a-hover-color)
+          );
+        }
+      }
+
+      .cta-btn {
+        @include cta-btn(
+          map-get($dark-theme, btn-bg-color),
+          map-get($dark-theme, btn-text-color),
+          map-get($dark-theme, btn-hover-bg-color)
+        );
+      }
+    }
+  }
+}
+
+// ☀️ LIGHT THEME
+.light-theme {
+  .section-tow{
+    padding: 2rem;
+    border-radius: 8px;
+
+    .section-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+
+      .section-title {
+        @include section-title(map-get($light-theme, text-color-primary));
+      }
+
+      .section-subtitle {
+        @include section-subtitle(map-get($light-theme, text-color-secondary));
+      }
+
+      .features-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .feature-item {
+          @include feature-item(
+            map-get($light-theme, a-text-color),
+            map-get($light-theme, a-hover-color)
+          );
+        }
+      }
+
+      .cta-btn {
+        @include cta-btn(
+          map-get($light-theme, btn-bg-color),
+          map-get($light-theme, btn-text-color),
+          map-get($light-theme, btn-hover-bg-color)
+        );
+      }
+    }
+  }
+}

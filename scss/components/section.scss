@@ -1,0 +1,116 @@
+@use "../abstracts" as *;
+
+// ✅ ساختار پایه
+.section {
+  .container {
+    @include responsive-flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+
+    .card {
+      flex: 1 1 calc(33.333% - 2rem); // سه کارت در هر ردیف
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 1rem;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow;
+      overflow: hidden;
+      transition: $transition;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: $box-shadow-hover;
+      }
+
+      .card-header {
+        height: $card-header-height;
+        flex-shrink: 0;
+        background-color: inherit;
+      }
+
+      .card-body {
+        flex-grow: 1;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        h3 {
+          font-size: 1.25rem;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+// 🌙 DARK THEME
+.dark-theme {
+  .section {
+    .card {
+      background-color: map-get($dark-theme, card-bg-color);
+
+      .card-header {
+        background-color: map-get($dark-theme, primary-color);
+      }
+
+      .card-body {
+        h3 {
+          color: map-get($dark-theme, text-color-primary);
+        }
+
+        p {
+          color: map-get($dark-theme, text-color-secondary);
+        }
+      }
+    }
+  }
+}
+
+// ☀️ LIGHT THEME
+.light-theme {
+  .section {
+    .card {
+      background-color: map-get($light-theme, card-bg-color);
+
+      .card-header {
+        background-color: map-get($light-theme, primary-color);
+      }
+
+      .card-body {
+        h3 {
+          color: map-get($light-theme, text-color-primary);
+        }
+
+        p {
+          color: map-get($light-theme, text-color-secondary);
+        }
+      }
+    }
+  }
+}
+
+// 🛠 Mixin برای ریسپانسیو
+@mixin responsive-flex($breakpoint: $breakpoint-mobile) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (max-width: $breakpoint) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: $gap;
+
+    .card {
+      flex: 1 1 100%;
+      margin: 0 0 $gap 0;
+    }
+  }
+}

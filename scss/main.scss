@@ -1,0 +1,26 @@
+// main.scss
+
+@use "components" as *; // Import all components
+@use "abstracts" as *;
+
+/* main.scss */
+
+/* اعمال رنگ‌ها در حالت دارک و لایت */
+body {
+  &.dark-theme {
+    background-color: map-get($dark-theme, background-color);
+    color: map-get($dark-theme, text-color);
+  }
+
+  &.light-theme {
+    background-color: map-get($light-theme, background-color);
+    color: map-get($light-theme, text-color);
+  }
+
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: $padding;
+  margin: 0 auto;
+  max-width: $max-width;
+}
