@@ -1,26 +1,120 @@
-// main.scss
-
-@use "components" as *; // Import all components
+@use "components" as *;
 @use "abstracts" as *;
 
-/* main.scss */
-
-/* اعمال رنگ‌ها در حالت دارک و لایت */
 body {
-  &.dark-theme {
-    background-color: map-get($dark-theme, background-color);
-    color: map-get($dark-theme, text-color);
-  }
-
-  &.light-theme {
-    background-color: map-get($light-theme, background-color);
-    color: map-get($light-theme, text-color);
-  }
-
   font-family: Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   padding: $padding;
   margin: 0 auto;
   max-width: $max-width;
+
+  &.dark-theme {
+    background-color: map-get($dark-theme, background-color);
+    color: map-get($dark-theme, text-color);
+    border-color: map-get($dark-theme, border-color);
+
+    button {
+      @include cta-btn(
+        map-get($dark-theme, btn-bg-color),
+        map-get($dark-theme, btn-text-color),
+        map-get($dark-theme, btn-hover-bg-color)
+      );
+      margin-bottom: 1rem;
+    }
+
+    input {
+      background-color: map-get($dark-theme, input-bg-color);
+      border: 1px solid map-get($dark-theme, input-border-color);
+      padding: 0.8rem;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      background-color: map-get($dark-theme, card-bg-color);
+      border-color: inherit;
+
+      .card-header {
+        background-color: map-get($dark-theme, primary-color);
+      }
+    }
+
+    hr {
+      color: aliceblue;
+    }
+  }
+
+  &.light-theme {
+    background-color: map-get($light-theme, background-color);
+    color: map-get($light-theme, text-color);
+    border-color: map-get($light-theme, border-color);
+
+    button {
+      @include cta-btn(
+        map-get($light-theme, btn-bg-color),
+        map-get($light-theme, btn-text-color),
+        map-get($light-theme, btn-hover-bg-color)
+      );
+      margin-bottom: 1rem;
+    }
+
+    input {
+      background-color: map-get($light-theme, input-bg-color);
+      border: 1px solid map-get($light-theme, input-border-color);
+      padding: 0.8rem;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      background-color: map-get($light-theme, card-bg-color);
+      border-color: inherit;
+
+      .card-header {
+        background-color: map-get($light-theme, primary-color);
+      }
+    }
+  }
+}
+
+@mixin cta-btn($bg-color, $text-color, $hover-bg-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $hover-bg-color;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+::-webkit-scrollbar {
+  padding: 5px;
+  width: 5px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #7a7a7a;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #4a4a4a;
 }

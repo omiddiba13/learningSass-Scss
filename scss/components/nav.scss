@@ -1,6 +1,6 @@
 @use "../abstracts" as *;
 
-// 🔥 Base Styles for Links (for both themes)
+//  Base Styles for Links (for both themes)
 %link-style {
   color: inherit;
   transition: color $transition-duration ease;
@@ -20,7 +20,7 @@
   transition: background-color $transition-duration ease;
 }
 
-// 🔥 DARK THEME
+//  DARK THEME
 .dark-theme {
   nav {
     ul {
@@ -47,7 +47,7 @@
   }
 }
 
-// ☀️ LIGHT THEME (Using Dark Theme Styles as Base)
+//  LIGHT THEME (Using Dark Theme Styles as Base)
 .light-theme {
   nav {
     ul {
@@ -74,7 +74,7 @@
   }
 }
 
-// ✅ ساختار پایه‌ی بدون تم (پیش‌فرض)
+
 nav {
   @include flex-center;
 
@@ -121,7 +121,6 @@ nav {
   }
 }
 
-// 📱 ریسپانسیو
 @media (max-width: $breakpoint-mobile) {
   nav {
     flex-direction: column;
@@ -143,7 +142,7 @@ nav {
       transition: max-height 0.4s ease-in-out;
 
       &.active {
-        max-height: 500px; // بسته به تعداد آیتم‌ها
+        max-height: 500px;
       }
 
       li {

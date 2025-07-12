@@ -1,6 +1,6 @@
 @use "../abstracts" as *;
 
-// Mixins برای کاهش تکرار کد
+
 @mixin section-title($color, $font-size: 2rem, $margin-bottom: 1rem) {
   font-size: $font-size;
   color: $color;

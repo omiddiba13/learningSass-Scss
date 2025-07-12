@@ -1,6 +1,4 @@
 @use "../abstracts" as *;
-
-// ✅ ساختار پایه
 .section {
   .container {
     @include responsive-flex;
@@ -18,6 +16,7 @@
       box-shadow: $box-shadow;
       overflow: hidden;
       transition: $transition;
+      border-color: inherit; // رنگ مرز از body ارث‌بری می‌شود
 
       &:hover {
         transform: translateY(-5px);
@@ -27,7 +26,7 @@
       .card-header {
         height: $card-header-height;
         flex-shrink: 0;
-        background-color: inherit;
+        background-color: inherit; 
       }
 
       .card-body {
@@ -46,71 +45,6 @@
           font-size: 1rem;
         }
       }
-    }
-  }
-}
-
-// 🌙 DARK THEME
-.dark-theme {
-  .section {
-    .card {
-      background-color: map-get($dark-theme, card-bg-color);
-
-      .card-header {
-        background-color: map-get($dark-theme, primary-color);
-      }
-
-      .card-body {
-        h3 {
-          color: map-get($dark-theme, text-color-primary);
-        }
-
-        p {
-          color: map-get($dark-theme, text-color-secondary);
-        }
-      }
-    }
-  }
-}
-
-// ☀️ LIGHT THEME
-.light-theme {
-  .section {
-    .card {
-      background-color: map-get($light-theme, card-bg-color);
-
-      .card-header {
-        background-color: map-get($light-theme, primary-color);
-      }
-
-      .card-body {
-        h3 {
-          color: map-get($light-theme, text-color-primary);
-        }
-
-        p {
-          color: map-get($light-theme, text-color-secondary);
-        }
-      }
-    }
-  }
-}
-
-// 🛠 Mixin برای ریسپانسیو
-@mixin responsive-flex($breakpoint: $breakpoint-mobile) {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  @media (max-width: $breakpoint) {
-    flex-direction: column;
-    align-items: stretch;
-    gap: $gap;
-
-    .card {
-      flex: 1 1 100%;
-      margin: 0 0 $gap 0;
     }
   }
 }

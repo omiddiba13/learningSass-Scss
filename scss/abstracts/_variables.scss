@@ -1,92 +1,45 @@
 // 🎨 Colors - Dark Mode & Light Mode
 
-// Dark Mode Colors
+// Dark Mode Colors// Dark Mode Colors
 $dark-theme: (
   primary-color: #1f1f1f,
-  // پس‌زمینه اصلی - تیره
   secondary-color: #2c2c2c,
-  // پس‌زمینه ثانویه - کمی روشن‌تر
   text-color: #f0f0f0,
-  // متن اصلی - روشن
   text-color-primary: #ffffff,
-  // تیترها یا تاکیدها - سفید
   text-color-secondary: #cccccc,
-
-  // متن فرعی یا جزئیات - خاکی روشن
-  // لینک‌ها
   a-text-color: #ffffff,
-  // لینک - آبی آرام
   a-hover-color: #7a7a7a,
-
-  // لینک در حالت hover - روشن‌تر
-  // دکمه‌ها
   btn-bg-color: #3c6e71,
-  // دکمه - سبز تیره طبیعی
   btn-hover-bg-color: #284b63,
-  // هاور دکمه - تیره‌تر
   btn-text-color: #ffffff,
-
-  // متن دکمه - سفید
-  // تیترها
   h1-h2-text-color: #ffffff,
-  // تیتر اصلی - سفید
   h2-text-color: #999999,
-
-  // تیتر فرعی - خاکی روشن
-  // پس‌زمینه آیتم‌ها
   ul-li-bg-color: #2a2a2a,
-  // پس‌زمینه آیتم‌های لیست
   background-color: #121212,
-  // پس‌زمینه کلی صفحه
   card-bg-color: #1e1e1e,
+  border-color: #444444,
 
-  // پس‌زمینه کارت‌ها
-  // Breakpoints
   breakpoint-mobile: 768px,
 );
 
 // Light Mode Colors
 $light-theme: (
   primary-color: #ffffff,
-  // پس‌زمینه اصلی - سفید
   secondary-color: #f0f0f0,
-  // پس‌زمینه ثانویه - خاکی روشن
   text-color: #1f1f1f,
-  // متن اصلی - تیره
   text-color-primary: #333333,
-  // تیترها یا تاکیدها - خاکی تیره
   text-color-secondary: #666666,
-
-  // متن فرعی یا جزئیات - خاکی روشن
-  // لینک‌ها
   a-text-color: #000000,
-  // لینک - آبی آسمانی
   a-hover-color: #adadad,
-
-  // لینک در حالت hover - آبی تیره‌تر
-  // دکمه‌ها
   btn-bg-color: #000000,
-  // دکمه - آبی آرام
   btn-hover-bg-color: #757575,
-  // هاور دکمه - آبی تیره‌تر
   btn-text-color: #ffffff,
-
-  // متن دکمه - سفید
-  // تیترها
   h1-h2-text-color: #333333,
-  // تیتر اصلی - خاکی تیره
   h2-text-color: #555555,
-
-  // تیتر فرعی - خاکی متوسط
-  // پس‌زمینه آیتم‌ها
   ul-li-bg-color: #e0e0e0,
-  // پس‌زمینه آیتم‌های لیست
   background-color: #ffffff,
-  // پس‌زمینه کلی صفحه
   card-bg-color: #f9f9f9,
-
-  // پس‌زمینه کارت‌ها
-  // Breakpoints
+  border-color: #d1d1d1,
   breakpoint-mobile: 768px,
 );
 
@@ -98,7 +51,7 @@ $btn-font-size: 1rem;
 $font-weight-bold: 700;
 
 // 📐 Spacing
-$padding: 2rem;
+$padding: 1rem;
 $margin: 1rem;
 $btn-padding: 10px 20px;
 $ul-li-padding: 5px;
@@ -113,9 +66,9 @@ $card-header-height: 150px;
 // 🧱 Borders and Radius
 $btn-border-radius: 5px;
 $ul-li-border-radius: 4px;
-$border-radius: 8px;
+$border-radius: 20px; // Radius for buttons and cards
 
-// 🌫 Shadows (ملایم در حالت دارک)
+// 🌫 Shadows
 $box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 $box-shadow-hover: 0 6px 10px rgba(0, 0, 0, 0.4);
 

@@ -3,12 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sample Layout</title>
+    <title>Ts - Scss</title>
     <link rel="stylesheet" href="./dist/css/main.css" />
   </head>
 
   <body class="body">
-    <!-- 🧭 Navigation Bar -->
     <nav class="navbar">
       <div class="navbar-toggle" id="hamburger">
         <span></span>
@@ -61,6 +60,110 @@
           <button class="cta-btn">Just a Button</button>
         </div>
       </section>
+    </section>
+
+    <section class="section-form">
+      <h1>Data Form (Simplified Entries)</h1>
+      <form id="contactForm">
+        <fieldset>
+          <legend>Personal Information</legend>
+          <label for="name">Name</label><br />
+          <input type="text" id="name" name="name" required /><br />
+          <label for="email">Email</label><br />
+          <input type="email" id="email" name="email" required /><br />
+          <label for="message">Message</label><br />
+          <textarea id="message" name="message" rows="3" required></textarea
+          ><br />
+        </fieldset>
+
+        <fieldset>
+          <legend>Hobbies and Skills</legend>
+          <label for="hobbies">Hobbies</label><br />
+          <input
+            type="text"
+            id="hobbies"
+            name="hobbies"
+            placeholder="comma-separated" /><br />
+          <label for="skills">Skills</label><br />
+          <input
+            type="text"
+            id="skills"
+            name="skills"
+            placeholder="comma-separated" /><br />
+          <label for="languages">Languages</label><br />
+          <input
+            type="text"
+            id="languages"
+            name="languages"
+            placeholder="comma-separated" /><br />
+        </fieldset>
+
+        <fieldset>
+          <legend>Education (Last/Main)</legend>
+          <label for="edu_degree">Degree</label><br />
+          <input type="text" id="edu_degree" name="edu_degree" /><br />
+          <label for="edu_institution">Institution</label><br />
+          <input
+            type="text"
+            id="edu_institution"
+            name="edu_institution" /><br />
+          <label for="edu_year">Year</label><br />
+          <input type="number" id="edu_year" name="edu_year" /><br />
+        </fieldset>
+
+        <fieldset>
+          <legend>Experience (Last/Main)</legend>
+          <label for="exp_jobTitle">Job Title</label><br />
+          <input type="text" id="exp_jobTitle" name="exp_jobTitle" /><br />
+          <label for="exp_company">Company</label><br />
+          <input type="text" id="exp_company" name="exp_company" /><br />
+          <label for="exp_years">Years</label><br />
+          <input type="number" id="exp_years" name="exp_years" /><br />
+        </fieldset>
+
+        <fieldset>
+          <legend>Project (Example)</legend>
+          <label for="proj_title">Title</label><br />
+          <input type="text" id="proj_title" name="proj_title" /><br />
+          <label for="proj_description">Description</label><br />
+          <textarea
+            id="proj_description"
+            name="proj_description"
+            rows="2"></textarea
+          ><br />
+          <label for="proj_year">Year</label><br />
+          <input type="number" id="proj_year" name="proj_year" /><br />
+        </fieldset>
+
+        <fieldset>
+          <legend>Certification (Example)</legend>
+          <label for="cert_title">Title</label><br />
+          <input type="text" id="cert_title" name="cert_title" /><br />
+          <label for="cert_issuer">Issuer</label><br />
+          <input type="text" id="cert_issuer" name="cert_issuer" /><br />
+          <label for="cert_year">Year</label><br />
+          <input type="number" id="cert_year" name="cert_year" /><br />
+        </fieldset>
+
+        <fieldset>
+          <legend>Other Questions</legend>
+          <label for="address">Address</label><br />
+          <input type="text" id="address" name="address" /><br />
+          <label for="phone">Phone</label><br />
+          <input type="number" id="phone" name="phone" /><br />
+          <label for="age">Age</label><br />
+          <input type="number" id="age" name="age" /><br />
+          <label for="job">Job</label><br />
+          <input type="text" id="job" name="job" /><br />
+          <input type="checkbox" id="isActive" name="isActive" />
+          <label for="isActive">Is Active</label><br />
+          <input type="checkbox" id="isMarried" name="isMarried" />
+          <label for="isMarried">Is Married</label><br />
+        </fieldset>
+
+        <button type="submit">Submit</button>
+        <button type="button" id="downloadBtn">Download</button>
+      </form>
     </section>
 
     <script src="./main.js"></script>
